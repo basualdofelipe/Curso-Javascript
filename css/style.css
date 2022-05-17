@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    padding: 1rem;
+}
+
+body{
+    background-color: brown;
+}
+
+div{
+    background-color: rgb(208, 78, 78);
+    margin: 5%;
+    padding: 2%;
+}
+
+ol{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 100vh;
+    flex-grow: 1;
+}
+
+
+ul{
+    margin: 15px;
+}
+
+input{
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    margin: 10px;
+    padding: 3px;
+}
+button{
+    border-color: brown;
+    color:brown;
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    border-radius: 10px;
+}
