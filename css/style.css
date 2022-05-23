@@ -8,11 +8,12 @@ h1{
 }
 
 body{
-    background-color: brown;
+    background-color: #171A21;
+    color: white;
 }
 
 div{
-    background-color: rgb(208, 78, 78);
+    background-color: #1B2838;
     margin: 5%;
     padding: 2%;
 }
@@ -23,11 +24,18 @@ ol{
     flex-wrap: wrap;
     height: 100vh;
     flex-grow: 1;
+    list-style: none;
+}
+
+li{
+    padding: 2px;
 }
 
 
 ul{
     margin: 15px;
+    padding: 2px;
+    list-style: none;
 }
 
 input{
@@ -38,9 +46,15 @@ input{
     padding: 3px;
 }
 button{
-    border-color: brown;
-    color:brown;
-    background-color: rgb(255, 255, 255);
+    color:#A1BA1D;
+    background-color: #4C6B22;
     padding: 10px;
     border-radius: 10px;
 }
+
+.juegos-card{
+    max-width: 200px;
+    background-color: rgba(255, 255, 255, 0.288);
+    padding: 20px;
+    margin: 5px;
+    }

@@ -1,3 +1,5 @@
+AOS.init();
+
 const body = document.body
 const h1 = document.createElement("h1")
 const div = document.createElement("div")
@@ -46,7 +48,7 @@ function cargarJuego(juego, precio){
     let newgameCompleto = {
         nombre: newgame.nombre,
         precio: newgame.precio,
-        iva: newgame.masIva,
+        iva: newgame.masIva(),
         ganancias: newgame.masImpGanancia(),
         impPais: newgame.masImpPais(),
         total: newgame.impTotal()
@@ -98,6 +100,8 @@ function appendear(e){
     let nombre= document.createElement("li");
     nombre.className = e.nombre;
     nombre.innerText = e.nombre;
+    nombre.dataset.aos = `zoom-in`
+    nombre.className = "juegos-card"
     lista.append(nombre)
 
     let datos = document.createElement("ul")
