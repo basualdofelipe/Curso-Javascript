@@ -139,3 +139,42 @@ limpiar.addEventListener("click",()=>{
     localStorage.clear()
     lista.innerHTML = ""
 })
+
+
+
+async function papanatas(){
+    const juegardo = await fetch('https://store.steampowered.com/api/appdetails?appids=261550&cc=ar&filters=price_overview',{mode: 'no-cors', method:'GET'});
+    console.log(juegardo);
+}
+// papanatas()
+
+// const pedirJuego = async () => {
+//     const resp = await fetch('https://store.steampowered.com/api/appdetails?appids=261550&cc=ar',{mode: 'no-cors'})
+//     const data = await resp.json();
+//     console.log(data)
+// }
+
+
+// fetch('https://store.steampowered.com/api/appdetails?appids=261550&cc=ar',{mode: 'no-cors'})
+//     // .then ( (resp) => resp.json )
+//     .then ( (data) => {
+//         console.log(data)
+//     });
+
+
+
+
+
+// // $.getJSON('https://store.steampowered.com/api/appdetails?appids=261550&cc=ar&filters=price_overview', function(data) {
+// //     consolelog(data)
+// // });
+
+// // fetch('https://store.steampowered.com/api/appdetails?appids=261550&cc=ar&filters=price_overview',{mode: 'no-cors'})
+// //     .then((result) => result.json())
+// //     .then((output) => {
+// //         console.log('Output: ', output);
+        
+// // })
+
+
+// GET https://store.steampowered.com/api/appdetails?filters=price_overview&appids=620
