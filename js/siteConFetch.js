@@ -32,7 +32,7 @@ class Juego{
         return (this.precio * (1 + 0.21 + 0.08 + 0.35)).toFixed(2);
     }
 }
-
+/*
 
 localStorage.getItem("listaStorage") != null ?
 JSON.parse(localStorage.getItem("listaStorage")).forEach(e => {
@@ -94,18 +94,29 @@ function mostrar(juego){
     let e = JSON.parse(localStorage.getItem(juego))
     appendear(e)
 }
+*/
 
 
-function appendear(e){
-    let nombre= document.createElement("li");
-    nombre.className = e.nombre;
-    nombre.innerText = e.nombre;
-    nombre.dataset.aos = `zoom-in`
-    nombre.className = "juegos-card"
-    lista.append(nombre)
 
+function appendear(e,imagen){
+    
+
+    let juego= document.createElement("li");
+    juego.className = e.juego;
+    juego.dataset.aos = `zoom-in`
+    juego.className = "juegos-card"
+    lista.append(juego)
+
+    let titulo = document.createElement("div")
+
+    let img = document.createElement("img");
+    img.src= imagen
+    juego.append(img)
+
+
+    
     let datos = document.createElement("ul")
-    nombre.append(datos)
+    juego.append(datos)
 
     let precio = document.createElement("li")
     precio.innerText = "precio: $" + e.precio
@@ -144,6 +155,33 @@ limpiar.addEventListener("click",()=>{
  fetch("../js/juegos.JSON")
     .then(res => res.json())
     .then(obj => {
-        console.log(obj[2][Object.keys(obj[2])[0]].data.name)
-        console.log(Object.keys(obj[1])[0])
+        obj.forEach(e => {
+            
+            let juego = e[Object.keys(e)[0]]["data"]
+            let imagen = juego.header_image;
+            let nombre = juego.name;
+            let precio = juego.price_overview.final/100;
+            console.log(
+                `Nombre: ${nombre}\nPrecio: $${precio}`
+                )
+                mostarar(nombre,precio,imagen)
+                
+            });
     })
+
+    function mostarar(juego,precio,imagen){
+        //cargamos el nuevo juego al método Juegos
+    let newgame = new Juego(juego,precio)
+
+    //hacemos un nuevo objeto con los precios
+    let newgameCompleto = {
+        nombre: newgame.nombre,
+        precio: newgame.precio,
+        iva: newgame.masIva(),
+        ganancias: newgame.masImpGanancia(),
+        impPais: newgame.masImpPais(),
+        total: newgame.impTotal()
+    }
+    appendear(newgameCompleto,imagen)
+
+    }

@@ -7,6 +7,9 @@ h1{
     padding: 1rem;
 }
 
+
+
+
 body{
     background-color: #171A21;
     color: white;
@@ -20,9 +23,8 @@ div{
 
 ol{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
-    height: 100vh;
     flex-grow: 1;
     list-style: none;
 }
@@ -32,10 +34,12 @@ li{
 }
 
 
+
 ul{
     margin: 15px;
     padding: 2px;
     list-style: none;
+    align-self: center;
 }
 
 input{
@@ -53,8 +57,16 @@ button{
 }
 
 .juegos-card{
-    max-width: 200px;
+    max-width: 100%;
+    min-width: 60%;
     background-color: rgba(255, 255, 255, 0.288);
     padding: 20px;
     margin: 5px;
+    display: flex;
+    flex-direction: row;
+    font-size: 1.25rem;
     }
+
+img{
+    max-width: 100%;
+}
